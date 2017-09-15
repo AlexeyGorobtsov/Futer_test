@@ -5,4 +5,3 @@ spl_autoload_register(function($class_name){
 
 $mysqli = DataBase::getDB()->getConnection();
 
-//var_dump($mysqli);

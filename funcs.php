@@ -1,10 +1,5 @@
 <?php
 require_once 'connect.php';
-/*===================функция по преоборазованию и экранированию символов====================*/
-
-//$name = DataBase::getDB()->clean($_POST['name']);
-//$text = DataBase::getDB()->clean($_POST['text']);
-
 $params = DataBase::getDB()->getPostParams();
 
 if ($params) {
@@ -24,7 +19,7 @@ if ($params) {
         die("123");
     }
 }
-//}
+
 $res = $mysqli->query("SELECT name, text, DATE_FORMAT(`date`, '%H:%i %d.%m.%Y') as date FROM gb1 ORDER BY id");
 $messages = $res->fetch_all(MYSQLI_ASSOC);
 echo json_encode($messages);
